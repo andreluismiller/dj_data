@@ -1,3 +1,6 @@
 from django.contrib import admin
+from .models import DailyMetrics
 
-# Register your models here.
+admin.site.register(DailyMetrics)
+
+
