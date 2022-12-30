@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Acompanhamento de Posts - Home</h1>
+  <p>Bem-vindo(a) à plataforma para acompanhamento do desempenho de posts <em>Flocks</em>!</p>
+  <h2>Dynamic content</h2>
+  <p>A plataforma tem a seguinte quantidade de cadastros:</p>
+  <ul>
+    <li><strong>Posts:</strong> {{ num_posts }}</li>
+    <li><strong>Métricas:</strong> {{ num_posts_instances }}</li>
+  </ul>
+
+  <p>Você visitou está página {{num_visits }}{% if num_visits == 1 %} vezes{% else %} vezes{% endif %}.</p>
+{% endblock %}

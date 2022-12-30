@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Lista de posts</h1>
+  {% if post_list %}
+  <ul>
+    {% for post in post_list %}
+      <li>
+        <a href="{{ get_absolute_url }}">{{ post.post_type }}</a> ({{post.post_link}})
+      </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <p>Não existe posts cadastrados.</p>
+  {% endif %}
+{% endblock %}

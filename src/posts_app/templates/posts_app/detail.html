@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+    Detalhes {{object.pk}}
+{% endblock title %}
+
+
+{% block content %}
+    Id do post: {{object.pk}}
+    <br>
+    Data de postagem: {{object.post_date}}  
+{% endblock content %}
+
+

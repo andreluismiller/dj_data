@@ -1,6 +1,6 @@
 from django.db import models
 from perfis_app.models import Perfil
-
+from django.shortcuts import reverse
 
 # Classe para cadastro do post
 class PostInfo(models.Model):
@@ -29,7 +29,13 @@ class PostInfo(models.Model):
     def save(self, *args, **kwargs):
         return super().save(*args, **kwargs)
 
-    # Método de exibição dos dados
+    # Método de exibição dos dados no Admin
     def __str__(self):
         return f"Post ID: {self.id_post}"
+
+
+    # Método que permite a navegação para determinada página baseado no nome do app e do caminho fixado em **kwargs
+    def get_absolute_url(self):
+        return reverse('posts_app:detalhes', kwargs={'pk': self.pk})
+
 

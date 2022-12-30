@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>ID Post: {{ post.id_post }}</h1>
+
+  <p><strong>Rede social:</strong> <a href="">{{ post.plataform }}</a></p> <!-- author detail link not yet defined -->
+  <p><strong>Tipo de post:</strong> {{ post.post_type }}</p>
+  <p><strong>Data de postagem:</strong> {{ post.post_date }}</p>
+  <p><strong>Link do post:</strong> {{ post.post_link }}</p>
+
+  <div style="margin-left:20px;margin-top:20px">
+    <h4>Métricas cadastradas</h4>
+
+    {% for instance in post.postinstance_set.all %}
+      <hr>
+      <p><strong>Data de referência das métricas:</strong> {{instance.date_collect}}</p>
+      <p><strong>Alcance:</strong> {{instance.reach}}</p>
+      <p><strong>Likes:</strong> {{instance.likes}}</p>
+      <p><strong>Comentários:</strong> {{instance.comments}}</p>
+      <p><strong>Compartuilhamentos:</strong> {{instance.shares}}</p>
+      <p><strong>Salvos:</strong> {{instance.saves}}</p>
+      <p><strong>Engajamento:</strong> {{instance.Engajement}}</p>
+      <p><strong>Visualizações:</strong> {{instance.views}}</p>
+      <p class="text-muted"><strong>Id:</strong> {{copy.id}}</p>
+    {% endfor %}
+  </div>
+{% endblock %}

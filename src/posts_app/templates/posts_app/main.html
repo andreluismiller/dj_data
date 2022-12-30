@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}
+Lista de posts cadastrados  
+{% endblock title %}
+
+{% block content %}
+Lista de posts
+<br>
+{% for obj in object_list  %}
+    <a href="{{obj.get_absolute_url}}">{{obj.pk}}</a>  
+{% endfor %}
+
+{% endblock content %}
